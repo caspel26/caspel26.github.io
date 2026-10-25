@@ -53,3 +53,16 @@ header nav{gap:24px}
 .hero{min-height:min(720px,calc(100svh - 68px));padding-top:clamp(56px,7vh,84px)}
 @media(max-width:800px){header{height:58px}header nav{gap:14px}.personal-brand.wordmark{font-size:20px}.hero{min-height:0;padding-top:28px}}
 @media(max-width:350px){header nav{gap:10px}.personal-brand.wordmark{font-size:18px}.hero{padding-top:22px}}
+/* Phone code cards: labelled header, animated panel (mobile.js), capped height with a fade while more code follows. */
+@media(max-width:800px){
+ .code-disclosure>summary{padding:13px 16px;transition:border-color .25s,background-color .25s}
+ .disclosure-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+ .disclosure-text small{font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.06em;color:var(--accent)}
+ .disclosure-text span{font-size:13px;line-height:1.4}
+ .code-disclosure>summary svg{transition:transform .3s cubic-bezier(.2,.75,.2,1)}
+ .code-disclosure[open]>summary,.code-disclosure[open] .project-example{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+ .code-disclosure .project-example{max-height:min(64svh,540px);overflow-y:auto;overscroll-behavior-y:auto;-webkit-mask-image:linear-gradient(#000 calc(100% - 48px),transparent);mask-image:linear-gradient(#000 calc(100% - 48px),transparent)}
+ .code-disclosure .project-example.at-end{-webkit-mask-image:none;mask-image:none}
+ .code-disclosure .project-example pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:hidden}
+}
+@media(prefers-reduced-motion:reduce){.code-disclosure>summary,.code-disclosure>summary svg{transition:none}}

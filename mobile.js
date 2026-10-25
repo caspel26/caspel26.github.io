@@ -1,7 +1,29 @@
 (()=>{
 const compact=matchMedia('(max-width:800px)'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const hero=document.querySelector('.hero');
-const examples=[...document.querySelectorAll('.project-example')].map((example,index)=>{const details=document.createElement('details');details.className='code-disclosure';const summary=document.createElement('summary');summary.innerHTML=(index===0?'View Python example':'View Go example')+'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>';example.before(details);details.append(summary,example);return details;});
+const examples=[...document.querySelectorAll('.project-example')].map((example,index)=>{
+ const details=document.createElement('details');details.className='code-disclosure';
+ const summary=document.createElement('summary');const files=example.querySelectorAll('pre').length;
+ summary.innerHTML=`<span class="disclosure-text"><small>${index===0?'PYTHON':'GO'} · ${files} ${files>1?'FILES':'FILE'}</small><span>View ${index===0?'Python':'Go'} example</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>`;
+ example.before(details);details.append(summary,example);
+ summary.addEventListener('click',event=>animateDisclosure(details,example,event));
+ example.addEventListener('scroll',()=>markEnd(example),{passive:true});
+ return details;
+});
+function markEnd(panel){panel.classList.toggle('at-end',panel.scrollTop+panel.clientHeight>=panel.scrollHeight-2)}
+// Native <details> cannot animate its height; on phones the panel grows and shrinks instead of jumping.
+function animateDisclosure(details,panel,event){
+ if(!compact.matches||reduced.matches)return;
+ event.preventDefault();
+ if(details.dataset.moving)return;
+ details.dataset.moving='1';
+ const opening=!details.open;
+ if(opening){details.open=true;panel.scrollTop=0;markEnd(panel)}
+ const full=`${panel.offsetHeight}px`;
+ const frames=opening?[{height:'0px',opacity:0},{height:full,opacity:1}]:[{height:full,opacity:1},{height:'0px',opacity:0}];
+ const motion=panel.animate(frames,{duration:opening?320:220,easing:'cubic-bezier(.2,.75,.2,1)'});
+ motion.onfinish=()=>{if(!opening)details.open=false;motion.cancel();delete details.dataset.moving};
+}
 
 // Phones: the profile is re-projected at each chapter boundary, driven by the scroll position.
 // Shared rows keep their slot, so the reader sees the same object with fields swapped.
