@@ -66,3 +66,16 @@ header nav{gap:24px}
  .code-disclosure .project-example pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:hidden}
 }
 @media(prefers-reduced-motion:reduce){.code-disclosure>summary,.code-disclosure>summary svg{transition:none}}
+/* Rounder code cards: pill-like header with a circular chevron, softly rounded panel. */
+@media(max-width:800px){
+ .code-disclosure>summary{padding:12px 12px 12px 18px;min-height:60px;border-radius:18px;background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--surface) 82%,var(--accent)));box-shadow:0 1px 0 color-mix(in srgb,var(--accent) 10%,transparent) inset;transition:border-color .25s,background-color .25s,border-radius .3s,transform .15s}
+ .code-disclosure>summary:active{transform:scale(.985)}
+ .code-disclosure>summary:focus-visible{outline-offset:3px;border-radius:18px}
+ .code-disclosure>summary svg{box-sizing:border-box;width:34px;height:34px;padding:9px;border-radius:50%;background:color-mix(in srgb,var(--accent) 16%,transparent);stroke-width:1.6}
+ .code-disclosure[open]>summary{border-radius:18px 18px 0 0}
+ .code-disclosure[open]>summary svg{background:color-mix(in srgb,var(--accent) 26%,transparent)}
+ .code-disclosure .project-example{border-radius:0 0 18px 18px}
+ .code-disclosure .project-example pre{padding:18px 18px}
+ .code-disclosure .example-source{padding:14px 18px 16px}
+}
+@media(prefers-reduced-motion:reduce){.code-disclosure>summary{transition:none}.code-disclosure>summary:active{transform:none}}
