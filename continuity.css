@@ -33,6 +33,25 @@ header.is-scrolled {
 .social-logo { width: 18px; height: 18px; flex: 0 0 18px; fill: currentColor; }
 .contact-links a { gap: 10px; }
 .contact-links a > span { margin-left: 6px; }
+@media (max-width: 800px) {
+  .seam-row { line-height: 1.8; white-space: normal; }
+  .seam-value { overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+}
+@media (min-width: 801px) {
+  .projection-field {
+    right: var(--pad);
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  .projection-object { font-size: clamp(11px, min(1.35vw, 2.1vh), 20px); }
+  .projection-row { width: 100%; white-space: normal; align-items: baseline; gap: 10px; }
+  .projection-key { flex: 0 0 5.8em; width: auto; }
+  .projection-value { min-width: 0; overflow-wrap: anywhere; }
+  .projection-punctuation { flex: none; }
+  .projection-meta { gap: 20px; flex-wrap: wrap; }
+}
 @media (min-width: 801px) {
   .contact {
     min-height: calc(100svh - 68px);

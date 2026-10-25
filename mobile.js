@@ -73,8 +73,9 @@ function progress({seam,opening}){
  return reduced.matches||document.querySelector('.ambient-toggle')?.getAttribute('aria-pressed')==='true'?Math.round(value):value;
 }
 let scheduled=false;
+function measure(){if(compact.matches)seams.forEach(({seam,rows})=>seam.style.setProperty('--gap',`${Math.max(28,...rows.map(({el})=>Math.ceil(el.getBoundingClientRect().height)+8))}px`))}
 function update(){scheduled=false;if(compact.matches)seams.forEach(item=>paint(item,progress(item)))}
 function queue(){if(!scheduled){scheduled=true;requestAnimationFrame(update)}}
-function mount(){examples.forEach(d=>d.open=!compact.matches);queue()}
-addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});reduced.addEventListener('change',queue);document.querySelector('.ambient-toggle')?.addEventListener('click',queue);compact.addEventListener('change',mount);mount();
+function mount(){examples.forEach(d=>d.open=!compact.matches);measure();queue()}
+addEventListener('scroll',queue,{passive:true});addEventListener('resize',()=>{measure();queue()},{passive:true});reduced.addEventListener('change',queue);document.querySelector('.ambient-toggle')?.addEventListener('click',queue);compact.addEventListener('change',mount);mount();
 })();
