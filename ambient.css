@@ -1,0 +1,35 @@
+/* Lilac light adds depth to the opening; the profile projection remains the structure. */
+.ambient-field{position:absolute;inset:0 0 auto;height:110svh;max-height:1200px;overflow:hidden;pointer-events:none;z-index:0;isolation:isolate;mask-image:linear-gradient(180deg,#000 0%,#000 65%,transparent 100%)}
+.ambient-orb{position:absolute;display:block;border-radius:50%;will-change:transform;filter:blur(34px);background:radial-gradient(circle,rgba(175,133,226,.20) 0%,rgba(146,102,202,.10) 28%,rgba(137,95,191,.025) 52%,transparent 73%);animation:ambient-drift 22s ease-in-out infinite alternate}
+.orb-one{width:540px;height:540px;left:-230px;top:100px;--dx:140px;--dy:-90px}
+.orb-two{width:650px;height:650px;left:27%;top:-330px;--dx:100px;--dy:150px;animation-duration:29s;animation-delay:-11s}
+.orb-three{width:420px;height:420px;right:-170px;top:300px;--dx:-140px;--dy:-100px;animation-duration:25s;animation-delay:-9s}
+.orb-four{width:300px;height:300px;left:38%;bottom:0;--dx:100px;--dy:-140px;animation-duration:26s;animation-delay:-16s;opacity:.7}
+.orb-five{width:110px;height:110px;right:32%;top:30%;filter:blur(23px);--dx:-100px;--dy:140px;animation-duration:24s;animation-delay:-7s;opacity:.5}
+/* Let the ambient layer blend through the opening instead of masking it with a flat panel. */
+.hero:before{display:none}.hero,.hero-content,.hero-footer,header{position:relative}.hero-content,.hero-footer{z-index:2}.projection-field{z-index:0}header{z-index:5}
+.personal-brand.wordmark{display:inline-flex;flex-direction:row;align-items:center;gap:0;font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:500;letter-spacing:-1.1px;line-height:1;padding:8px 0}
+.wordmark>span{color:var(--accent);font-size:inherit;font-weight:400;letter-spacing:inherit}
+.link-arrow{display:block;width:16px;height:16px;flex:0 0 16px;vertical-align:middle;overflow:visible}
+nav a{display:inline-flex;align-items:center;gap:6px;line-height:1.2}nav a .link-arrow{width:13px;height:13px;flex-basis:13px}
+.small-link{display:inline-flex;align-items:center;gap:6px;line-height:1.4}.small-link>span{display:inline-flex;align-items:center;justify-content:center;margin-left:12px;line-height:0}.small-link>.link-arrow{margin-left:6px}.small-link .link-arrow{width:14px;height:14px;flex-basis:14px}
+.project-out{display:flex;align-items:center;justify-content:center;line-height:0;padding:0;min-width:34px;min-height:34px;margin-top:2px;transform:none;transition:background .2s,border-color .2s}.project-out:hover{transform:none;border-color:var(--accent)}.project-out .link-arrow{width:15px;height:15px;flex-basis:15px}
+.explore{line-height:1.4}.explore>span{display:flex;align-items:center;justify-content:center;line-height:0}.explore .link-arrow{width:19px;height:19px;flex-basis:19px}
+.projection-back{display:inline-flex;align-items:center;gap:8px;line-height:1.3}.projection-back .link-arrow{width:12px;height:12px;flex-basis:12px;transform:rotate(180deg)}
+.ambient-toggle{position:absolute;right:var(--pad);top:calc(100svh - 58px);z-index:6;border:0;background:none;padding:8px 0;display:flex;align-items:center;gap:7px;color:var(--muted);font:8px ui-monospace,monospace;letter-spacing:.05em;cursor:pointer;opacity:.75}.ambient-toggle:hover{opacity:1;color:var(--accent)}.ambient-toggle svg{width:10px;height:10px;stroke:currentColor;stroke-width:1.4;fill:none}
+.ambient-paused .ambient-orb{animation-play-state:paused!important}
+[data-theme=light] .ambient-orb{opacity:.6;background:radial-gradient(circle,rgba(139,90,189,.16),rgba(165,126,207,.06) 35%,transparent 72%)}
+@keyframes ambient-drift{from{transform:translate3d(0,0,0) scale(.94)}to{transform:translate3d(var(--dx),var(--dy),0) scale(1.08)}}
+@media(max-width:800px){.ambient-field{height:110svh;max-height:none}.orb-one{width:390px;height:390px;left:-220px;top:180px}.orb-two{width:480px;height:480px;left:20%;top:-220px}.orb-three{width:330px;height:330px;right:-210px;top:400px}.orb-four{width:230px;height:230px;left:15%;bottom:0}.orb-five{display:none}.ambient-orb{filter:blur(28px)}.personal-brand.wordmark{font-size:21px;letter-spacing:-1px}.ambient-toggle{top:calc(100svh - 35px);font-size:7px}}
+@media(max-width:440px){.personal-brand.wordmark{font-size:20px}.project-out{min-width:32px;min-height:32px}nav{gap:17px}.ambient-toggle{top:calc(100svh - 29px)}}
+@media(max-width:350px){.personal-brand.wordmark{font-size:18px}nav{gap:13px}.project-out .link-arrow{width:14px;height:14px;flex-basis:14px}}
+@media(prefers-reduced-motion:reduce){.ambient-orb{animation:none!important;will-change:auto}.ambient-toggle{display:none}}
+
+/* Keep motion controls together with the theme control. */
+header .ambient-toggle{position:static;inset:auto;width:30px;height:30px;flex:none;border:1px solid var(--line);border-radius:50%;padding:0;display:grid;place-items:center;opacity:1}
+header .ambient-toggle span{display:none}
+header .ambient-toggle svg{width:11px;height:11px}
+@media(prefers-reduced-motion:reduce){header .ambient-toggle{display:none}}
+@media(max-width:800px){.projection-field{z-index:4}}
+.ambient-orb{will-change:transform,translate}
+@media(prefers-reduced-motion:reduce){.ambient-orb{translate:0 0!important;will-change:auto}}
