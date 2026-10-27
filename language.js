@@ -56,7 +56,7 @@
     'A desktop password manager built with Electron, Vue 3 and TypeScript. Credentials live in encrypted local vault files and are not sent over the network.':'Un gestore di password desktop realizzato con Electron, Vue 3 e TypeScript. Le credenziali restano in archivi locali cifrati e non vengono inviate in rete.',
     'Community-made calculators, planners and trackers for Olympus Prison on ManaCube.':'Calcolatori, pianificatori e tracker creati dalla community per Olympus Prison su ManaCube.',
     'The colors have a story, too.':'Anche i colori raccontano una storia.', 'Meet Lilac Nights':'Scopri Lilac Nights',
-    'Keep in touch':'Restiamo in contatto', 'Good things start':'Le cose belle iniziano',
+    'Keep in touch':'Restiamo in contatto', 'Good things start':'Le cose belle iniziano', 'with':'con',
     'a conversation.':'con una conversazione.',
     'SOFTWARE ENGINEER · OPEN SOURCE':'INGEGNERE SOFTWARE · OPEN SOURCE',
     'COLORED WITH LILAC NIGHTS.':'COLORATO CON LILAC NIGHTS.',
