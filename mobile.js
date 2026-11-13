@@ -28,7 +28,7 @@ function animateDisclosure(details,panel,event){
 // Phones: the profile is re-projected at each chapter boundary, driven by the scroll position.
 // Shared rows keep their slot, so the reader sees the same object with fields swapped.
 const {fields,views}=window.caspelProjection;
-const phone={hero:['role','domain','practice'],about:['role','domain','group'],approach:['python','go','practice','delivery'],work:['ninja','goninja','shiori','shimwire','vault','olympus'],contact:['github','linkedin']};
+const phone={hero:['role','domain','practice'],about:['role','domain','group'],approach:['python','go','practice','delivery'],work:['ninja','goninja','shiori','shimwire','hinoki','vault','olympus'],contact:['github','linkedin']};
 const chain=[
  {from:'hero',to:'about',place:seam=>hero.insertBefore(seam,hero.querySelector('.hero-footer'))},
  {from:'about',to:'approach',place:seam=>document.querySelector('#approach').prepend(seam)},
