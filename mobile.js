@@ -1,10 +1,10 @@
 (()=>{
 const compact=matchMedia('(max-width:800px)'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const hero=document.querySelector('.hero');
-const examples=[...document.querySelectorAll('.project-example')].map((example,index)=>{
+const examples=[...document.querySelectorAll('.project-example')].map(example=>{
  const details=document.createElement('details');details.className='code-disclosure';
- const summary=document.createElement('summary');const files=example.querySelectorAll('pre').length;
- summary.innerHTML=`<span class="disclosure-text"><small>${index===0?'PYTHON':'GO'} · ${files} ${files>1?'FILES':'FILE'}</small><span>View ${index===0?'Python':'Go'} example</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>`;
+ const summary=document.createElement('summary');const files=example.querySelectorAll('pre').length;const language=example.dataset.language;
+ summary.innerHTML=`<span class="disclosure-text"><small>${language.toUpperCase()} · ${files} ${files>1?'FILES':'FILE'}</small><span>View ${language} example</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>`;
  example.before(details);details.append(summary,example);
  summary.addEventListener('click',event=>animateDisclosure(details,example,event));
  example.addEventListener('scroll',()=>markEnd(example),{passive:true});
@@ -28,7 +28,7 @@ function animateDisclosure(details,panel,event){
 // Phones: the profile is re-projected at each chapter boundary, driven by the scroll position.
 // Shared rows keep their slot, so the reader sees the same object with fields swapped.
 const {fields,views}=window.caspelProjection;
-const phone={hero:['role','domain','practice'],about:['role','domain','group'],approach:['python','go','practice','delivery'],work:['ninja','goninja','shiori','shimwire','hinoki','vault','olympus'],contact:['github','linkedin']};
+const phone={hero:['role','domain','practice'],about:['role','domain','group'],approach:['python','go','practice','delivery'],work:views.work.keys,contact:['github','linkedin']};
 const chain=[
  {from:'hero',to:'about',place:seam=>hero.insertBefore(seam,hero.querySelector('.hero-footer'))},
  {from:'about',to:'approach',place:seam=>document.querySelector('#approach').prepend(seam)},
