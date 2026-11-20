@@ -70,7 +70,7 @@
     'Switch to light theme':'Passa al tema chiaro', 'Switch to dark theme':'Passa al tema scuro',
     'Visit Shiori':'Visita Shiori', 'View django-ninja-aio-crud on GitHub':'Vedi django-ninja-aio-crud su GitHub',
     'View goninja on GitHub':'Vedi goninja su GitHub', 'View shimwire on GitHub':'Vedi shimwire su GitHub', 'View hinoki on GitHub':'Vedi hinoki su GitHub',
-    'Python APIs with architecture you can check. Typed endpoints declare who may call them, whether they run in a transaction and which errors they return; a Rust core underneath, and rules that verify the result.':'API Python con un’architettura che puoi verificare. Gli endpoint tipizzati dichiarano chi può chiamarli, se girano in una transazione e quali errori restituiscono; sotto c’è un core in Rust, e regole che controllano il risultato.',
+    'Python APIs with architecture you can check. Typed endpoints declare who may call them, whether they are atomic and which errors they return; a Rust core and Kiso, Hinoki’s own HTTP server, underneath, and rules that verify the result.':'API Python con un’architettura che puoi verificare. Gli endpoint tipizzati dichiarano chi può chiamarli, se sono atomici e quali errori restituiscono; sotto ci sono un core in Rust e Kiso, il server HTTP di Hinoki, e regole che controllano il risultato.',
     'HINOKI / AN ENDPOINT':'HINOKI / UN ENDPOINT',
     'SHELL / HINOKI CHECK':'SHELL / HINOKI CHECK',
     'Pre-alpha, not released: evaluate it from a source checkout with disposable data.':'Pre-alpha, non rilasciato: provalo da un checkout dei sorgenti con dati usa e getta.',
