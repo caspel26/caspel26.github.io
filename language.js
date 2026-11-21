@@ -71,6 +71,8 @@
     'Visit Shiori':'Visita Shiori', 'View django-ninja-aio-crud on GitHub':'Vedi django-ninja-aio-crud su GitHub',
     'View goninja on GitHub':'Vedi goninja su GitHub', 'View shimwire on GitHub':'Vedi shimwire su GitHub', 'View hinoki on GitHub':'Vedi hinoki su GitHub',
     'Python APIs with architecture you can check. Typed endpoints declare who may call them, whether they are atomic and which errors they return; a Rust core and Kiso, Hinoki’s own HTTP server, underneath, and rules that verify the result.':'API Python con un’architettura che puoi verificare. Gli endpoint tipizzati dichiarano chi può chiamarli, se sono atomici e quali errori restituiscono; sotto ci sono un core in Rust e Kiso, il server HTTP di Hinoki, e regole che controllano il risultato.',
+    'Python APIs with architecture you can check. Each endpoint declares who may call it, whether it is atomic and which errors it returns, on a Rust core, and rules verify the result.':'API Python con un’architettura che puoi verificare. Ogni endpoint dichiara chi può chiamarlo, se è atomico e quali errori restituisce, su un core in Rust, e le regole verificano il risultato.',
+    'HINOKI / THE OPTIONAL ADMIN, ON THE BLOG EXAMPLE':'HINOKI / L’ADMIN OPZIONALE, SULL’ESEMPIO DEL BLOG',
     'HINOKI / AN ENDPOINT':'HINOKI / UN ENDPOINT',
     'SHELL / HINOKI CHECK':'SHELL / HINOKI CHECK',
     'Pre-alpha, not released: evaluate it from a source checkout with disposable data.':'Pre-alpha, non rilasciato: provalo da un checkout dei sorgenti con dati usa e getta.',
