@@ -47,7 +47,8 @@ header.is-scrolled {
   }
   .projection-object { font-size: clamp(11px, min(1.35vw, 2.1vh), 20px); }
   .projection-row { width: 100%; white-space: normal; align-items: baseline; gap: 10px; }
-  .projection-key { flex: 0 0 5.8em; width: auto; }
+  .projection-key { flex: 0 0 5.8em; width: auto; white-space: nowrap; }
+  .projection-field[data-section="work"] .projection-key { flex-basis: 8em; }
   .projection-value { min-width: 0; overflow-wrap: anywhere; }
   .projection-punctuation { flex: none; }
   .projection-meta { gap: 20px; flex-wrap: wrap; }
